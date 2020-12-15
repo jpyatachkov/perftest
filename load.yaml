@@ -1,0 +1,15 @@
+# https://yandextank.readthedocs.io/en/latest/tutorial.html
+phantom:
+  address: 'host.docker.internal:8081'
+  ssl: false
+  timeout: 60s
+  writelog: proto_warning
+  uris:
+    - '/cart'
+  load_profile:
+    load_type: rps
+    # schedule: step(5, 500, 100, 10)
+    schedule: line(1, 1000, 2m)
+    # schedule: const(80, 20m)
+console:
+  enabled: true
