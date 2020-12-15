@@ -11,5 +11,5 @@ import {NestFactory} from '@nestjs/core';
     AppModule,
     new FastifyAdapter()
   );
-  await app.listen(8081);
+  await app.listen(process.env.NODE_PORT || 8081);
 })();
